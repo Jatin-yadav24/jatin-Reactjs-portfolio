@@ -32,6 +32,11 @@
   --glass-bg: rgba(255, 255, 255, 0.6);
   --glass-border: rgba(255, 255, 255, 0.8);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+
+  /* --- Contact Form Inputs (Light Theme Fix) --- */
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-text: #1e293b;
 }
 
 body.dark {
@@ -42,6 +47,11 @@ body.dark {
   --glass-bg: rgba(30, 41, 59, 0.6);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+  /* --- Contact Form Inputs (Dark Theme) --- */
+  --input-bg: rgba(30, 41, 59, 0.6);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-text: #f8fafc;
 }
 
 html {
@@ -587,20 +597,25 @@ section {
   gap: 1.5rem;
 }
 
+/* --- Contact Form Inputs styles --- */
 .contact-form input,
 .contact-form textarea {
   padding: 1.2rem;
-  border: 1px solid var(--glass-border);
+  border: 1.5px solid var(--input-border);
   border-radius: 12px;
   font-size: 1rem;
-  background: var(--glass-bg);
-  color: var(--text-color);
+  background: var(--input-bg);
+  color: var(--input-text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+
 }
 
 .contact-form textarea {
