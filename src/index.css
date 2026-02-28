@@ -1014,3 +1014,43 @@ footer {
     font-size: 1rem;
   }
 }
+
+/* ==================================================
+   CONTACT SECTION MOBILE RIGHT-SHIFT FIX
+   ================================================== */
+
+@media (max-width: 768px) {
+  /* Grid aur content ko screen ke andar lock karna */
+  .contact-grid {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden; /* Extra space ko cut karne ke liye */
+  }
+
+  .contact-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem !important; /* Force padding so it doesn't expand */
+    margin: 0;
+  }
+
+  /* Form aur uske inputs ko exactly 100% width dena */
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .submit-btn {
+    width: 100%;
+    max-width: 100%;
+    /* Box-sizing border-box pehle se hai, but form inputs ke liye dobara define karna safe rehta hai */
+    box-sizing: border-box !important; 
+  }
+
+  /* Contact info ko visually center balance karna */
+  .detail-item {
+    justify-content: center;
+    max-width: 100%;
+  }
+}
