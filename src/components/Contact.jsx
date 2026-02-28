@@ -39,37 +39,84 @@ const Contact = () => {
       <h2 className="section-title">
         Contact <span>Me</span>
       </h2>
-      <div className="contact-content glass-card">
-        <form className="contact-form" onSubmit={handleSubmit}>
-          {/* YOUR API KEY HERE */}
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Full Name"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email Address"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="How can I help you?"
-            required
-          ></textarea>
-          <button type="submit" className="submit-btn" disabled={isSubmitting}>
-            {isSubmitting ? "Sending... " : "Send Message "}
-            <i
-              className={`fa-solid ${isSubmitting ? "fa-spinner fa-spin" : "fa-paper-plane"}`}
-            ></i>
-          </button>
-        </form>
+
+      <div className="contact-grid container">
+        {/* --- Left Side: Contact Information --- */}
+        <div className="contact-info">
+          <div className="info-card-wrapper">
+            <h3>Let's Connect</h3>
+            <p>
+              Currently seeking new opportunities to grow and contribute. If you think I’d be a good fit for your team or project, let’s get in touch.
+            </p>
+
+            <div className="contact-details-list">
+              <div className="detail-item">
+                <i className="fa-solid fa-envelope"></i>
+                <div>
+                  <span>Email Me</span>
+                  <p>yadavjatin44285@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="detail-item">
+                <i className="fa-solid fa-phone"></i>
+                <div>
+                  <span>Call Me</span>
+                  <p>+91 93017 91239</p>
+                </div>
+              </div>
+
+              <div className="detail-item">
+                <i className="fa-solid fa-location-dot"></i>
+                <div>
+                  <span>Location</span>
+                  <p>Indore, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* --- Right Side: Original Web3Forms Form --- */}
+        <div className="contact-content glass-card">
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+              type="hidden"
+              name="access_key"
+              value="c7247fe5-aecb-4e3a-bcb9-31ee6dec9211"
+            />
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Full Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email Address"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="How can I help you?"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              className="submit-btn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending... " : "Send Message "}
+              <i
+                className={`fa-solid ${isSubmitting ? "fa-spinner fa-spin" : "fa-paper-plane"}`}
+              ></i>
+            </button>
+          </form>
+        </div>
       </div>
 
-      {/* Toast Notification integrated here */}
+      {/* Toast Notification */}
       <div
         className={`toast ${toast.show ? "show" : ""}`}
         style={{ background: toast.type === "error" ? "#ef4444" : "#10b981" }}
