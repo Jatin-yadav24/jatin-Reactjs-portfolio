@@ -1,1 +1,1 @@
-https://jatin-yadav24.github.io/jatin-Reactjs-portfolio/
+https://jatinyadav-portfolio.netlify.app/
